@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-900 text-gray-300">
+    <footer className="w-full bg-lahemo-principal text-lahemo-secundaria">
       <div className="container mx-auto max-w-5xl px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
@@ -20,7 +20,8 @@ export default function Footer() {
                 height={100}
                 />
             </Link>
-            <p className="text-gray-400">
+            <p className="text-lahemo-secundaria text-sm">
+                <br/>
                 Liga Acadêmica de Hematologia e Hemoterapia.
                 <br />
                 Centro Universitário Unichristus
@@ -51,7 +52,7 @@ export default function Footer() {
                 href="https://www.instagram.com/lahemo.uc" // <-- TROQUE AQUI
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white"
+                className="text-lahemo-secundaria hover:text-white"
               >
                 <Instagram className="h-6 w-6" />
                 <span className="sr-only">Instagram</span>
@@ -61,7 +62,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+        <div className="mt-12 border-t border-lahemo-secundaria-500 pt-8 text-center text-sm text-lahemo-secundaria">
           <p>&copy; {new Date().getFullYear()} LAHEMO. Todos os direitos reservados.</p>
           <p className="mt-1">
             Site desenvolvido por Victor Melo{" "}
@@ -69,7 +70,7 @@ export default function Footer() {
               href="https://github.com/victormelo7"
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center text-gray-400 hover:text-white ml-2"
+              className="inline-flex items-center text-lahemo-secundaria hover:text-white ml-2"
               aria-label="GitHub de Victor Melo"
             >
               <GithubIcon className="h-5 w-5" />

@@ -22,9 +22,9 @@ export default function Sobre() {
           {/* Texto Descritivo */}
           <div className="text-base text-gray-700 space-y-4">
             <p>
-              A **LAHEMO** (Liga Acadêmica de Hematologia e Hemoterapia) é uma 
-              entidade estudantil sem fins lucrativos, vinculada à [Nome da sua Universidade], 
-              dedicada a aprofundar o conhecimento na área da hematologia.
+              A LAHEMO (Liga Acadêmica de Hematologia e Hemoterapia) é uma 
+              entidade estudantil sem fins lucrativos, vinculada à Unichristus, 
+              dedicada a aprofundar o conhecimento na área da hematologia e hemoterapia.
             </p>
             <p>
               Nosso objetivo é complementar a formação acadêmica, 
@@ -38,17 +38,17 @@ export default function Sobre() {
             <InfoCard
               icon={<BookOpen className="h-6 w-6 text-red-800" />}
               title="Ensino"
-              description="Aulas, discussões de casos clínicos e jornadas acadêmicas para expandir o conhecimento teórico."
+              description="Aulas, discussões de casos clínicos e jornadas acadêmicas para expandir o conhecimento teórico"
             />
             <InfoCard
               icon={<Atom className="h-6 w-6 text-red-800" />}
               title="Pesquisa"
-              description="Incentivo à produção científica, desenvolvimento de projetos e apresentação em congressos."
+              description="Incentivo à produção científica, desenvolvimento de projetos e apresentação em congressos"
             />
             <InfoCard
               icon={<HandHeart className="h-6 w-6 text-red-800" />}
               title="Extensão"
-              description="Ações sociais, como campanhas de doação de sangue e cadastro de medula óssea (REDOME)."
+              description="Ações sociais, como campanhas de doação de sangue e cadastro de medula óssea (REDOME)"
             />
           </div>
         </div>
