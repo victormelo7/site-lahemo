@@ -17,28 +17,29 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="w-full sticky top-0 bg-lahemo-principal border-b border-lahemo-terciaria shadow-sm z-50">
+    <nav className="w-full sticky top-0 bg-lahemo-secundaria border-b border-gray-200 shadow-sm z-50">
       <div className="container mx-auto max-w-5xl px-4 py-3 flex justify-between items-center">
         
-        {/* --- 1. LOGO (AGORA COMO IMAGEM) --- */}
+        {/* 1. LOGO (AGORA COMO IMAGEM) */}
         <Link href="/">
           <Image
-            src="/logo-lahemo.png" // <-- 2. O CAMINHO DO SEU ARQUIVO NA PASTA 'public'
+            src="/logo-lahemo.png" // <-- ATUALIZE PARA O SEU LOGO BRANCO
             alt="Logo LAHEMO"
-            width={140} // <-- 3. AJUSTE A LARGURA (em pixels)
-            height={40} // <-- 4. AJUSTE A ALTURA (em pixels)
-            priority // Faz o logo carregar mais rápido
+            width={140} 
+            height={40} 
+            priority 
           />
         </Link>
         {/* --- FIM DO LOGO --- */}
         
         {/* 2. Links de Navegação */}
-        <div className="hidden md:flex space-x-6 text-gray-700 items-center">
+        {/* Alterado para 'text-lahemo-secundaria' (branco) */}
+        <div className="hidden md:flex space-x-6 text-lahemo-primaria items-center">
           
-          <Link href="/#sobre" className="hover:text-lahemo-terciaria transition-colors">
+          <Link href="/#sobre" className="hover:text-gray-300 transition-colors">
             Sobre
           </Link>
-          <Link href="/#membros" className="hover:text-lahemo-terciaria transition-colors">
+          <Link href="/#membros" className="hover:text-gray-300 transition-colors">
             Membros
           </Link>
 
@@ -46,7 +47,8 @@ export default function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-base">
+                {/* O 'Trigger' também precisa ser branco */}
+                <NavigationMenuTrigger className="text-base text-lahemo-primaria">
                   Conteúdos
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -60,7 +62,7 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           
-          {/* 3. Botão de Ação */}
+          {/* 3. Botão de Ação (Está correto, usando a cor --primary) */}
           <Button>Processo Seletivo</Button>
         </div>
 

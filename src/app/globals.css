@@ -157,3 +157,33 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ================================================================================
+  6. ANIMAÇÕES DE SCROLL (Marquee)
+  Adicionado para o efeito de texto na seção Hero.
+  ================================================================================
+*/
+@keyframes scroll-left-to-right {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes scroll-right-to-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/*
+  Usamos @layer utilities para criar as nossas próprias classes de animação 
+  que o Tailwind pode usar.
+*/
+@layer utilities {
+  .animate-scroll-ltr {
+    /* (ltr = left-to-right) */
+    animation: scroll-left-to-right 40s linear infinite;
+  }
+  .animate-scroll-rtl {
+    /* (rtl = right-to-left) */
+    animation: scroll-right-to-left 40s linear infinite;
+  }
+}
