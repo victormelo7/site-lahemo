@@ -49,7 +49,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold uppercase text-gray-400">Siga-nos</h3>
             <div className="mt-4 flex space-x-4">
               <a 
-                href="https://www.instagram.com/lahemo.uc" // <-- TROQUE AQUI
+                href="https://www.instagram.com/lahemo.uc"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-lahemo-secundaria hover:text-white"
@@ -57,7 +57,6 @@ export default function Footer() {
                 <Instagram className="h-6 w-6" />
                 <span className="sr-only">Instagram</span>
               </a>
-              {/* Adicione mais redes sociais aqui se precisar */}
             </div>
           </div>
         </div>

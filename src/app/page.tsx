@@ -1,8 +1,8 @@
 // src/app/page.tsx
 import Hero from "@/components/Hero";
 import Sobre from "@/components/Sobre";
-import Membros from "@/components/Membros"; // <-- 1. IMPORTE AQUI
-import Footer from "@/components/Footer"; // <-- 3. IMPORTE AQUI
+import Membros from "@/components/Membros";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

@@ -2,8 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-// Componente auxiliar para o texto que se repete
-// Usamos o vermelho terciário (brilhante) com 10% de opacidade
+// Componente auxiliar para o texto que se repete na animação
 const MarqueeText = () => (
   <span className="text-6xl font-heading font-bold text-lahemo-terciaria/10 whitespace-nowrap px-4">
     LAHEMOLAHEMOLAHEMOLAHEMOLAHEMOLAHEMOLAHEMOLAHEMO 
@@ -16,7 +15,6 @@ export default function Hero() {
     // 1. A <section> (O fundo principal)
     <section className="relative flex min-h-[calc(100vh-65px)] items-center justify-center overflow-hidden bg-lahemo-principal">
       
-      {/* --- MUDANÇA AQUI: Fundo Animado (Tela Cheia) --- */}
       {/* Este contentor 'absolute inset-0' preenche todo o fundo.
         'z-0' garante que fica atrás do nosso conteúdo (que tem 'z-10').
         'flex-col' empilha as linhas de texto verticalmente.

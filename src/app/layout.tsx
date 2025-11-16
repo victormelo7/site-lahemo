@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 
 import type { Metadata } from "next";
-// 1. Importamos 'Lato' (corpo) e 'Montserrat' (títulos)
+// 1. Import 'Lato' (corpo) e 'Montserrat' (títulos)
 import { Lato, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/Navbar';
@@ -16,7 +16,7 @@ const lato = Lato({
 // 3. Configura a Montserrat como a fonte de Título (font-heading)
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["700"], // Só precisamos do negrito (Bold) para títulos
+  weight: ["700"], //(Bold) para títulos
   variable: "--font-heading", // <-- Define como a nova fonte 'heading'
 });
 

@@ -13,7 +13,7 @@
 /*
   ================================================================================
   2. @theme inline
-  "Regista" as suas variáveis CSS para que o Tailwind as possa usar como classes.
+  "Regista" as variáveis CSS para que o Tailwind possa usar como classes.
   Ex: A variável "--color-lahemo-principal" torna-se a classe "bg-lahemo-principal" ou "text-lahemo-principal".
   ================================================================================
 */
@@ -119,7 +119,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* --- A DEFINIÇÃO DAS NOSSAS CORES (da Identidade Visual) ---
-    Aqui damos os valores (convertidos dos seus HEX) às nossas variáveis.
+    Aqui damos os valores (convertidos dos seus HEX) às variáveis.
   */
   --lahemo-principal: oklch(0.2566 0.0959 24.43); /* #470509 (Vinho Escuro - para fundos) */
   --lahemo-secundaria: oklch(1 0 0); /* #ffffff (Branco - para textos sobre fundos escuros) */

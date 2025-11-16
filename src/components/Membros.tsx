@@ -1,6 +1,6 @@
 // src/components/Membros.tsx
 import Link from "next/link";
-import Image from "next/image"; // <-- 1. IMPORTAMOS O 'Image'
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -9,19 +9,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-// --- DADOS ATUALIZADOS COM 'imagemUrl' ---
-// (Use os nomes do seu PDF e crie os 'imagemUrl' com base nos ficheiros que guardou)
-
 const presidencia = [
   { 
     nome: "Beatriz Cidrão", 
     cargo: "Presidente",
-    imagemUrl: "/membros/beatriz-cidrao.png" // <-- 2. EDITE ESTE CAMINHO
+    imagemUrl: "/membros/beatriz-cidrao.png"
   },
   { 
     nome: "Amanda Amaral", 
     cargo: "Presidente",
-    imagemUrl: "/membros/amanda-amaral.png" // <-- EDITE ESTE CAMINHO
+    imagemUrl: "/membros/amanda-amaral.png"
   },
 ];
 
@@ -34,7 +31,7 @@ const ensino = [
 
 const pesquisa = [
   { nome: "Mariana Chaves", cargo: "Pesquisa", imagemUrl: "/membros/mariana-chaves.png" },
-  { nome: "Anna Rabb", cargo: "Pesquisa", imagemUrl: "/membros/anna-rabb.png" }, // (Pode repetir a imagem)
+  { nome: "Anna Rabb", cargo: "Pesquisa", imagemUrl: "/membros/anna-rabb.png" },
 ];
 
 const extensao = [
@@ -74,7 +71,7 @@ const orientadores = [
 
 export default function Membros() {
   return (
-    <section id="membros" className="w-full py-16 md:py-24 bg-gray-50/50 relative z-20"> {/* z-20 para o bug do scroll */}
+    <section id="membros" className="w-full py-16 md:py-24 bg-gray-50/50 relative z-20">
       <div className="container mx-auto max-w-5xl px-4 space-y-16">
         
         {/* Título Geral */}
@@ -88,7 +85,7 @@ export default function Membros() {
         </div>
         <SubSecaoMembros titulo="Orientadores">
           {orientadores.map((orientador) => (
-            // Futuramente, reativaremos o link aqui
+            // Futuramente, reativarei o link aqui
             // <Link key={orientador.slug} href={`/orientadores/${orientador.slug}`}>
               <Card key={orientador.nome} className="text-center shadow-md transition-transform hover:scale-105 hover:shadow-lg">
                 <CardHeader>

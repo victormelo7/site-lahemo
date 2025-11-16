@@ -35,17 +35,13 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    // CORREÇÃO: Fundo 'lahemo-principal' (vinho) e 'z-[100]' (para o scroll)
     <nav className="w-full sticky top-0 bg-lahemo-principal shadow-sm z-[100]">
       <div className="container mx-auto max-w-5xl px-4 py-3 flex justify-between items-center">
         
         {/* 1. LOGO */}
         <Link href="/">
-          {/* Atenção: Este logo DEVE ser um ficheiro .png com letras brancas 
-            e fundo transparente para funcionar aqui.
-          */}
           <Image
-            src="/logo-lahemo-branco.png" // Confirme o nome do seu logo branco na pasta /public
+            src="/logo-lahemo-branco.png"
             alt="Logo LAHEMO"
             width={140} 
             height={40} 
@@ -57,7 +53,6 @@ export default function Navbar() {
         {/* 2. LINKS DE NAVEGAÇÃO (DESKTOP) */}
         <div className="hidden md:flex space-x-6 items-center">
           
-          {/* CORREÇÃO: Links agora são 'text-lahemo-secundaria' (branco) */}
           <Link 
             href="/#sobre" 
             className="text-lahemo-secundaria hover:text-gray-300 transition-colors"
@@ -75,7 +70,6 @@ export default function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                {/* CORREÇÃO: Trigger agora é branco e tem o fundo correto */}
                 <NavigationMenuTrigger 
                   className="text-base bg-lahemo-principal text-lahemo-secundaria hover:bg-lahemo-principal hover:text-gray-300 focus:bg-lahemo-principal"
                 >
@@ -92,7 +86,6 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           
-          {/* 3. Botão de Ação (Este está correto, usa a cor --primary) */}
           <Button>Processo Seletivo</Button>
         </div>
 
