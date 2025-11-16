@@ -1,6 +1,7 @@
 // src/components/Footer.tsx
 import Link from "next/link";
-import { Instagram } from "lucide-react"; // Usando o ícone que já instalamos
+import { Instagram } from "lucide-react";
+import { GithubIcon } from "lucide-react"; 
 import Image from "next/image";
 
 export default function Footer() {
@@ -22,7 +23,7 @@ export default function Footer() {
             <p className="text-gray-400">
                 Liga Acadêmica de Hematologia e Hemoterapia.
                 <br />
-                [Nome da sua Universidade]
+                Centro Universitário Unichristus
             </p>
             </div>
 
@@ -60,11 +61,22 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Linha de Copyright */}
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} LAHEMO. Todos os direitos reservados.</p>
-          <p className="mt-1">Site desenvolvido por [Seu Nome/Grupo]</p>
-        </div>
+          <p className="mt-1">
+            Site desenvolvido por Victor Melo{" "}
+            <a 
+              href="https://github.com/victormelo7"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-gray-400 hover:text-white ml-2"
+              aria-label="GitHub de Victor Melo"
+            >
+              <GithubIcon className="h-5 w-5" />
+              <span className="sr-only">GitHub</span>
+            </a>
+          </p>
+        </div>  
       </div>
     </footer>
   );

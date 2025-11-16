@@ -2,7 +2,7 @@
 "use client";
 
 import Link from 'next/link';
-import Image from 'next/image'; // <-- 1. IMPORTE O 'Image' AQUI
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -12,18 +12,40 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+// Imports do Menu de Telemóvel
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+// --- 1. IMPORTS NOVOS (ACCORDION) ---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Menu } from "lucide-react";
+// Fim dos Imports
 import { cn } from "@/lib/utils";
 import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="w-full sticky top-0 bg-lahemo-secundaria border-b border-gray-200 shadow-sm z-50">
+    // CORREÇÃO: Fundo 'lahemo-principal' (vinho) e 'z-[100]' (para o scroll)
+    <nav className="w-full sticky top-0 bg-lahemo-principal shadow-sm z-[100]">
       <div className="container mx-auto max-w-5xl px-4 py-3 flex justify-between items-center">
         
-        {/* 1. LOGO (AGORA COMO IMAGEM) */}
+        {/* 1. LOGO */}
         <Link href="/">
+          {/* Atenção: Este logo DEVE ser um ficheiro .png com letras brancas 
+            e fundo transparente para funcionar aqui.
+          */}
           <Image
-            src="/logo-lahemo.png" // <-- ATUALIZE PARA O SEU LOGO BRANCO
+            src="/logo-lahemo-branco.png" // Confirme o nome do seu logo branco na pasta /public
             alt="Logo LAHEMO"
             width={140} 
             height={40} 
@@ -32,14 +54,20 @@ export default function Navbar() {
         </Link>
         {/* --- FIM DO LOGO --- */}
         
-        {/* 2. Links de Navegação */}
-        {/* Alterado para 'text-lahemo-secundaria' (branco) */}
-        <div className="hidden md:flex space-x-6 text-lahemo-primaria items-center">
+        {/* 2. LINKS DE NAVEGAÇÃO (DESKTOP) */}
+        <div className="hidden md:flex space-x-6 items-center">
           
-          <Link href="/#sobre" className="hover:text-gray-300 transition-colors">
+          {/* CORREÇÃO: Links agora são 'text-lahemo-secundaria' (branco) */}
+          <Link 
+            href="/#sobre" 
+            className="text-lahemo-secundaria hover:text-gray-300 transition-colors"
+          >
             Sobre
           </Link>
-          <Link href="/#membros" className="hover:text-gray-300 transition-colors">
+          <Link 
+            href="#membros" 
+            className="text-lahemo-secundaria hover:text-gray-300 transition-colors"
+          >
             Membros
           </Link>
 
@@ -47,8 +75,10 @@ export default function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                {/* O 'Trigger' também precisa ser branco */}
-                <NavigationMenuTrigger className="text-base text-lahemo-primaria">
+                {/* CORREÇÃO: Trigger agora é branco e tem o fundo correto */}
+                <NavigationMenuTrigger 
+                  className="text-base bg-lahemo-principal text-lahemo-secundaria hover:bg-lahemo-principal hover:text-gray-300 focus:bg-lahemo-principal"
+                >
                   Conteúdos
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -62,9 +92,80 @@ export default function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           
-          {/* 3. Botão de Ação (Está correto, usando a cor --primary) */}
+          {/* 3. Botão de Ação (Este está correto, usa a cor --primary) */}
           <Button>Processo Seletivo</Button>
         </div>
+
+        {/* --- 3. MENU HAMBÚRGUER (TELEMÓVEL) --- */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                {/* Ícone de Menu (branco) */}
+                <Menu className="h-6 w-6 text-lahemo-secundaria" />
+              </Button>
+            </SheetTrigger>
+            
+            <SheetContent side="right" className="bg-lahemo-principal text-lahemo-secundaria border-l-0 w-[300px]">
+              <SheetHeader>
+                <SheetTitle className="text-lahemo-secundaria font-heading">Navegação</SheetTitle>
+              </SheetHeader>
+              
+              {/* Links estilizados como botões 'ghost' */}
+              <div className="flex flex-col gap-2 py-4">
+                <SheetClose asChild>
+                  <Button asChild variant="ghost" className="justify-start text-lg hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
+                    <Link href="/#sobre">Sobre</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button asChild variant="ghost" className="justify-start text-lg hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
+                    <Link href="#membros">Membros</Link>
+                  </Button>
+                </SheetClose>
+                
+                {/* ---- MUDANÇA AQUI: CONTEÚDOS COMO ACCORDION ---- */}
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1" className="border-b-0">
+                    {/* 1. O Botão Clicável "Conteúdos" */}
+                    <AccordionTrigger className="justify-start text-lg font-normal hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria hover:no-underline p-4 rounded-md">
+                      Conteúdos
+                    </AccordionTrigger>
+                    {/* 2. A Lista que Abre */}
+                    <AccordionContent>
+                      <div className="flex flex-col gap-2 pl-8">
+                        <SheetClose asChild>
+                          <Button asChild variant="ghost" className="justify-start pl-4 hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
+                            <Link href="/aulas">Aulas</Link>
+                          </Button>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Button asChild variant="ghost" className="justify-start pl-4 hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
+                            <Link href="/resumos">Resumos</Link>
+                          </Button>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Button asChild variant="ghost" className="justify-start pl-4 hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
+                            <Link href="/questoes">Questões</Link>
+                          </Button>
+                        </SheetClose>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+                {/* ---- FIM DA MUDANÇA ---- */}
+
+
+                {/* Botão principal com largura total (w-full) */}
+                <div className="pt-6">
+                  <Button className="w-full">Processo Seletivo</Button>
+                </div>
+              </div>
+
+            </SheetContent>
+          </Sheet>
+        </div>
+        {/* --- FIM DO MENU DE TELEMÓVEL --- */}
 
       </div>
     </nav>
