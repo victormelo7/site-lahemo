@@ -78,8 +78,6 @@ export default function Hero() {
         
         {/* Subtítulo */}
         <p className="mt-6 text-lg leading-8 text-lahemo-secundaria/80 md:text-xl">
-          Conectando o tripé acadêmico: Ensino, Pesquisa e Extensão 
-          na vanguarda da Hematologia.
         </p>
         
         {/* Botões de Ação */}
