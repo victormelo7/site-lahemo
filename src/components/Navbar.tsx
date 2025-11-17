@@ -71,10 +71,11 @@ export default function Navbar() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger 
-                  className="text-base bg-lahemo-principal text-lahemo-secundaria hover:bg-lahemo-principal hover:text-gray-300 focus:bg-lahemo-principal"
+                  className="text-base bg-lahemo-principal text-lahemo-secundaria hover:bg-lahemo-principal hover:text-gray-300"
                 >
                   Conteúdos
                 </NavigationMenuTrigger>
+                
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-rows-2 lg:w-[125px] ">
                     <ListItem href="/aulas" title="Aulas"></ListItem>

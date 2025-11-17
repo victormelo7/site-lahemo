@@ -63,6 +63,24 @@ export default function Hero() {
          <div className="w-full flex animate-scroll-rtl">
           <MarqueeText /><MarqueeText />
         </div>
+                 <div className="w-full flex animate-scroll-rtl">
+          <MarqueeText /><MarqueeText />
+        </div>
+                 <div className="w-full flex animate-scroll-rtl">
+          <MarqueeText /><MarqueeText />
+        </div>
+                 <div className="w-full flex animate-scroll-rtl">
+          <MarqueeText /><MarqueeText />
+        </div>
+                 <div className="w-full flex animate-scroll-rtl">
+          <MarqueeText /><MarqueeText />
+        </div>
+                 <div className="w-full flex animate-scroll-rtl">
+          <MarqueeText /><MarqueeText />
+        </div>
+                 <div className="w-full flex animate-scroll-rtl">
+          <MarqueeText /><MarqueeText />
+        </div>
       </div>
 
       {/* 2. Conteúdo Principal (Centralizado) */}
