@@ -1,4 +1,3 @@
-// src/components/Membros.tsx
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -67,8 +66,6 @@ const orientadores = [
   },
 ];
 
-// --- COMPONENTE PRINCIPAL ---
-
 export default function Membros() {
   return (
     <section id="membros" className="w-full py-16 md:py-24 bg-gray-50/50 relative z-20">
@@ -89,25 +86,21 @@ export default function Membros() {
             // <Link key={orientador.slug} href={`/orientadores/${orientador.slug}`}>
               <Card key={orientador.nome} className="text-center shadow-md transition-transform hover:scale-105 hover:shadow-lg">
                 <CardHeader>
-                  {/* --- 3. MUDANÇA AQUI --- */}
                   <Image
                     src={orientador.imagemUrl}
                     alt={orientador.nome}
-                    width={96} // 96px (w-24)
-                    height={96} // 96px (h-24)
+                    width={96}
+                    height={96} 
                     className="rounded-full mx-auto mb-4 object-cover w-24 h-24"
                   />
-                  {/* --- FIM DA MUDANÇA --- */}
                   <CardTitle className="font-heading">{orientador.nome}</CardTitle>
                   <CardDescription className="text-lahemo-terciaria font-medium">
                     {orientador.cargo}
                   </CardDescription>
                 </CardHeader>
               </Card>
-            // </Link>
           ))}
         </SubSecaoMembros>
-        {/* --- DIVISÃO: PRESIDÊNCIA --- */}
         <SubSecaoMembros titulo="Presidência">
           {presidencia.map((membro) => (
             <CardMembro 
@@ -119,7 +112,6 @@ export default function Membros() {
           ))}
         </SubSecaoMembros>
 
-        {/* --- DIVISÃO: ENSINO --- */}
         <SubSecaoMembros titulo="Ensino">
           {ensino.map((membro) => (
             <CardMembro 
@@ -130,8 +122,7 @@ export default function Membros() {
             />
           ))}
         </SubSecaoMembros>
-
-        {/* --- DIVISÃO: PESQUISA --- */}
+        
         <SubSecaoMembros titulo="Pesquisa">
           {pesquisa.map((membro) => (
             <CardMembro 
@@ -143,7 +134,6 @@ export default function Membros() {
           ))}
         </SubSecaoMembros>
         
-        {/* --- DIVISÃO: EXTENSÃO --- */}
         <SubSecaoMembros titulo="Extensão">
           {extensao.map((membro) => (
             <CardMembro 
@@ -155,7 +145,6 @@ export default function Membros() {
           ))}
         </SubSecaoMembros>
 
-        {/* --- DIVISÃO: MARKETING --- */}
         <SubSecaoMembros titulo="Marketing">
           {marketing.map((membro) => (
             <CardMembro 
@@ -171,9 +160,6 @@ export default function Membros() {
   );
 }
 
-// --- COMPONENTES AUXILIARES ---
-
-// Card padrão para membros da diretoria
 function CardMembro({ nome, cargo, imagemUrl }: { nome: string, cargo: string, imagemUrl: string }) {
   return (
     <Card className="text-center shadow-md">
@@ -181,10 +167,8 @@ function CardMembro({ nome, cargo, imagemUrl }: { nome: string, cargo: string, i
         <Image
           src={imagemUrl}
           alt={nome}
-          width={96} // 96px (w-24)
-          height={96} // 96px (h-24)
-          // 'object-cover' evita que a imagem se estique
-          // 'w-24 h-24' garante o tamanho no layout
+          width={96}
+          height={96} 
           className="rounded-full mx-auto mb-4 object-cover w-24 h-24"
         />
         {/* --- FIM DA MUDANÇA --- */}

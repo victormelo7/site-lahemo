@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import Hero from "@/components/Hero";
 import Sobre from "@/components/Sobre";
 import Membros from "@/components/Membros";
@@ -9,8 +8,8 @@ export default function Home() {
     <main>
       <Hero />
       <Sobre />
-      <Membros /> {/* <-- 2. ADICIONE AQUI */}
-      <Footer /> {/* <-- 3. ADICIONE O FOOTER AQUI */}
+      <Membros />
+      <Footer />
     </main>
   );
 }

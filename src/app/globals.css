@@ -1,28 +1,14 @@
-/*
-  ================================================================================
-  1. IMPORTS
-  Importa as bibliotecas base necessárias para o Tailwind.
-  ================================================================================
-*/
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Define uma variante personalizada para o Modo Escuro (Dark Mode) */
 @custom-variant dark (&:is(.dark *));
 
-/*
-  ================================================================================
-  2. @theme inline
-  "Regista" as variáveis CSS para que o Tailwind possa usar como classes.
-  Ex: A variável "--color-lahemo-principal" torna-se a classe "bg-lahemo-principal" ou "text-lahemo-principal".
-  ================================================================================
-*/
 @theme inline {
   /* --- Variáveis de Tema Padrão (do shadcn) --- */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* --- AS NOSSAS FONTES PERSONALIZADAS (do layout.tsx) --- */
+  /* --- FONTES PERSONALIZADAS (do layout.tsx) --- */
   --font-sans: var(--font-sans); /* Substitui a fonte padrão pela 'Lato' */
   --font-heading: var(--font-heading); /* Regista a 'Montserrat' como fonte de título */
   --font-mono: var(--font-geist-mono);
@@ -64,18 +50,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* --- O REGISTO DAS NOSSAS CORES (da Identidade Visual) --- */
+  /* --- O REGISTO DE CORES (da Identidade Visual) --- */
   --color-lahemo-principal: var(--lahemo-principal);
   --color-lahemo-secundaria: var(--lahemo-secundaria);
   --color-lahemo-terciaria: var(--lahemo-terciaria);
 }
 
-/*
-  ================================================================================
-  3. :root (TEMA CLARO - O principal)
-  Aqui é onde definimos os valores reais das variáveis CSS para o tema claro.
-  ================================================================================
-*/
 :root {
   /* --- Variáveis padrão do tema (raio da borda, fundo, etc.) --- */
   --radius: 0.625rem;
@@ -86,10 +66,6 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
-  /* --- A NOSSA MUDANÇA DE TEMA (Botões) ---
-    Aqui substituímos as cores primárias padrão (que eram pretas)
-    pelas cores da nossa liga.
-  */
   --primary: var(--lahemo-terciaria); /* Define a cor primária (botões) como o nosso vermelho #aa0515 */
   --primary-foreground: var(--lahemo-secundaria); /* Define o texto dos botões como o nosso branco #ffffff */
 
@@ -118,21 +94,12 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* --- A DEFINIÇÃO DAS NOSSAS CORES (da Identidade Visual) ---
-    Aqui damos os valores (convertidos dos seus HEX) às variáveis.
-  */
   --lahemo-principal: oklch(0.2566 0.0959 24.43); /* #470509 (Vinho Escuro - para fundos) */
   --lahemo-secundaria: oklch(1 0 0); /* #ffffff (Branco - para textos sobre fundos escuros) */
   --lahemo-terciaria: oklch(0.4662 0.1872 26.35); /* #aa0515 (Vermelho Brilhante - para botões) */
 }
 
-/*
-  ================================================================================
-  4. .dark (TEMA ESCURO)
-  Define as cores que serão usadas se o utilizador ativar o Modo Escuro.
-  (Não mexemos aqui, por isso ele ainda usa o tema padrão).
-  ================================================================================
-*/
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -141,12 +108,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/*
-  ================================================================================
-  5. @layer base
-  Estilos CSS globais aplicados a todo o site.
-  ================================================================================
-*/
 @layer base {
   * {
     /* Define a cor da borda e do "anel" de foco de TODOS os elementos */
@@ -158,11 +119,6 @@
   }
 }
 
-/* ================================================================================
-  6. ANIMAÇÕES DE SCROLL (Marquee)
-  Adicionado para o efeito de texto na seção Hero.
-  ================================================================================
-*/
 @keyframes scroll-left-to-right {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0%); }
@@ -173,10 +129,6 @@
   100% { transform: translateX(-100%); }
 }
 
-/*
-  Usamos @layer utilities para criar as nossas próprias classes de animação 
-  que o Tailwind pode usar.
-*/
 @layer utilities {
   .animate-scroll-ltr {
     /* (ltr = left-to-right) */
