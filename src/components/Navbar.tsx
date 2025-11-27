@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 "use client";
 
 import Link from 'next/link';
@@ -12,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-// Imports do Menu de Telemóvel
+
 import {
   Sheet,
   SheetContent,
@@ -21,7 +20,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-// --- 1. IMPORTS NOVOS (ACCORDION) ---
+
 import {
   Accordion,
   AccordionContent,
@@ -29,7 +28,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Menu } from "lucide-react";
-// Fim dos Imports
+
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -38,7 +37,6 @@ export default function Navbar() {
     <nav className="w-full sticky top-0 bg-lahemo-principal shadow-sm z-[100]">
       <div className="container mx-auto max-w-5xl px-4 py-3 flex justify-between items-center">
         
-        {/* 1. LOGO */}
         <Link href="/">
           <Image
             src="/logo-lahemo-branco.png"
@@ -48,9 +46,6 @@ export default function Navbar() {
             priority 
           />
         </Link>
-        {/* --- FIM DO LOGO --- */}
-        
-        {/* 2. LINKS DE NAVEGAÇÃO (DESKTOP) */}
         <div className="hidden md:flex space-x-6 items-center">
           
           <Link 
@@ -66,7 +61,6 @@ export default function Navbar() {
             Membros
           </Link>
 
-          {/* Dropdown "Conteúdos" */}
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -90,12 +84,10 @@ export default function Navbar() {
           <Button>Processo Seletivo</Button>
         </div>
 
-        {/* --- 3. MENU HAMBÚRGUER (TELEMÓVEL) --- */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                {/* Ícone de Menu (branco) */}
                 <Menu className="h-6 w-6 text-lahemo-secundaria" />
               </Button>
             </SheetTrigger>
@@ -105,7 +97,6 @@ export default function Navbar() {
                 <SheetTitle className="text-lahemo-secundaria font-heading">Navegação</SheetTitle>
               </SheetHeader>
               
-              {/* Links estilizados como botões 'ghost' */}
               <div className="flex flex-col gap-2 py-4">
                 <SheetClose asChild>
                   <Button asChild variant="ghost" className="justify-start text-lg hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
@@ -116,16 +107,14 @@ export default function Navbar() {
                   <Button asChild variant="ghost" className="justify-start text-lg hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria">
                     <Link href="#membros">Membros</Link>
                   </Button>
-                </SheetClose>
-                
-                {/* ---- MUDANÇA AQUI: CONTEÚDOS COMO ACCORDION ---- */}
+                </SheetClose>                
+
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1" className="border-b-0">
-                    {/* 1. O Botão Clicável "Conteúdos" */}
                     <AccordionTrigger className="justify-start text-lg font-normal hover:bg-lahemo-terciaria/20 hover:text-lahemo-secundaria hover:no-underline p-4 rounded-md">
                       Conteúdos
                     </AccordionTrigger>
-                    {/* 2. A Lista que Abre */}
+    
                     <AccordionContent>
                       <div className="flex flex-col gap-2 pl-8">
                         <SheetClose asChild>
@@ -147,10 +136,7 @@ export default function Navbar() {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-                {/* ---- FIM DA MUDANÇA ---- */}
 
-
-                {/* Botão principal com largura total (w-full) */}
                 <div className="pt-6">
                   <Button className="w-full">Processo Seletivo</Button>
                 </div>
@@ -159,14 +145,11 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
         </div>
-        {/* --- FIM DO MENU DE TELEMÓVEL --- */}
-
       </div>
     </nav>
   );
 }
 
-// Componente auxiliar ListItem
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
