@@ -1,3 +1,4 @@
+// ...existing code...
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -52,7 +53,7 @@ export default function Hero() {
           <MarqueeText /><MarqueeText />
         </div>
 
-         <div className="w-full flex animate-scroll-rtl">
+        <div className="w-full flex animate-scroll-rtl">
           <MarqueeText /><MarqueeText />
         </div>
 
@@ -82,22 +83,13 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 container mx-auto max-w-5xl px-4 py-20 text-center">
-        
-<<<<<<< HEAD
         {/* Título Principal */}
-         <h1 className="text-4xl font-bold tracking-tight text-lahemo-secundaria md:text-6xl font-heading">
-          LAHEMO
-=======
         <h1 className="text-4xl font-bold tracking-tight text-lahemo-secundaria md:text-6xl font-heading">
           Liga Acadêmica de Hematologia e Hemoterapia
->>>>>>> 3f670692d786432ba27c05eba1ce1283c18edaa9
         </h1>
-        <br/>
-        <h2 className="text-4xl font-bold tracking-tight text-lahemo-secundaria md:text-6xl font-heading">
-          Liga Acadêmica de Hematologia e Hemoterapia
-        </h2>
-        
+
         <p className="mt-6 text-lg leading-8 text-lahemo-secundaria/80 md:text-xl">
+          {/* subtítulo ou descrição opcional */}
         </p>
         
         <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -105,9 +97,9 @@ export default function Hero() {
             <Link href="#sobre">Saiba Mais</Link>
           </Button>
         </div>
-        
       </div>
 
     </section>
   );
 }
+// ...existing code...
