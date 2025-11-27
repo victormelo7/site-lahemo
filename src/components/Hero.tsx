@@ -88,9 +88,13 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto max-w-5xl px-4 py-20 text-center">
         
         {/* Título Principal */}
-        <h1 className="text-4xl font-bold tracking-tight text-lahemo-secundaria md:text-6xl font-heading">
-          Liga Acadêmica de Hematologia e Hemoterapia
+         <h1 className="text-4xl font-bold tracking-tight text-lahemo-secundaria md:text-6xl font-heading">
+          LAHEMO
         </h1>
+        <br/>
+        <h2 className="text-4xl font-bold tracking-tight text-lahemo-secundaria md:text-6xl font-heading">
+          Liga Acadêmica de Hematologia e Hemoterapia
+        </h2>
         
         {/* Subtítulo */}
         <p className="mt-6 text-lg leading-8 text-lahemo-secundaria/80 md:text-xl">
